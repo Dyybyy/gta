@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Inventory Management</title>
+    <link rel="stylesheet" href="gta.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Inventory Management</h1>
+
+        <!-- Update stock form -->
+        <div class="add-stock">
+            <h2>Update Stock</h2>
+            <form id="updateForm">
+                <label for="item">Item:</label>
+                <input list="items" id="item" placeholder="Search or Add New Item" required>
+                <datalist id="items">
+                    <!-- Items will be dynamically populated by JavaScript -->
+                </datalist>
+
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="food">Food</option>
+                    <option value="supplies">Supply</option>
+                </select>
+
+                <label for="action">Action:</label>
+                <select id="action" required>
+                    <option value="add">Add Stock</option>
+                    <option value="remove">Remove Stock</option>
+                </select>
+
+                <label for="quantity">Quantity (in units):</label>
+                <input type="number" id="quantity" min="1" placeholder="Enter quantity" required>
+
+                <button type="submit">Update Stock</button>
+            </form>
+        </div>
+
+        <!-- Inventory Display -->
+        <div class="inventory">
+            <h2>Food Items</h2>
+            <input type="text" id="foodSearch" placeholder="Search food items...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity (units)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="foodTable">
+                    <!-- Food items will be added here dynamically -->
+                </tbody>
+            </table>
+
+            <h2>Supplies</h2>
+            <input type="text" id="suppliesSearch" placeholder="Search supplies...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity (units)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="suppliesTable">
+                    <!-- Supplies items will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- History Table -->
+        <div class="history">
+            <h2>History</h2>
+            <div id="dateButtons"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Item</th>
+                        <th>Action</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTable">
+                    <!-- History items will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="gta.java"></script>
+</body>
+</html>
